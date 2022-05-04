@@ -1,0 +1,490 @@
+Fabio Gomes
+fabio.gomes@caelum.com.br
+
+<>
+ 
+ function pulaLinha() {
+    document.write("<hr>")
+ }
+
+ var mensagem
+
+ // v1 significa um texto para exibir na tela
+ function exibirNaTela(texto) {
+     document.write(texto)
+     pulaLinha()
+ }
+    var idade =  40;
+    var peso = 93;
+    var altura = 1.76
+    
+    mensagem = "Minha idade " + idade;
+    exibirNaTela("idade");
+    //document.write("Minha idade " + idade );
+    //pulaLinha()
+
+    mensagem = "Peso =  " + peso + " Kg";
+    exibirNaTela(mensagem)
+    //document.write("Peso =  " + peso + " Kg");
+
+
+    mensagem = "Altura =  " + altura + "";
+    exibirNaTela(mensagem)
+    //document.write("Altura =  " + altura + "");
+    //pulaLinha()
+ 
+ </>
+=========================================================================
+
+6.1 - EXERCICIO > fichaAcademia.html => pag 65
+
+FICHA DE ACADEMIA CAELUM
+
+INFORMACOES A BUSCAR
+
+- NOME
+- IDADE
+- PESO
+- ALTURA
+- DATA DE NASCIMENTO
+
+
+PROMPT
+
+
+
+
+
+
+=========================================================================
+
+
+<meta charset="utf-8">
+<h1>Ficha de Academia Caelum</h1>
+<>
+    var mensagem
+    function pegaDados(mensagem) {
+        return prompt(mensagem).replace(",", ".")
+    }
+    mensagem = "Qual seu nome?"
+    var nome = pegaDados(mensagem)
+    mensagem = "Qual o peso?"
+    var peso = pegaDados(mensagem)
+    mensagem = "Qual altura?"
+    var altura = pegaDados(mensagem)
+    mensagem = "Qual data de nascimento?"
+    var datanascimento = pegaDados(mensagem)
+    document.write(`
+            Nome: ${nome}
+            <br>
+            Peso: ${peso}
+            <br>
+            Altura: ${altura}
+            <br>
+            Data de Nascimento: ${datanascimento}
+            `)
+</>
+
+=======================================================
+<h1>Cadastramento Academia Caelum WD-01</h1>
+< src="js/libFormataNumero.js"></>
+< src="js/libIdade.js"></>
+<>
+
+    var nome = prompt("Digite o seu nome: ")
+    //var idade = pegaNumero("Digite a sua idade: ")
+    var peso = pegaNumero("Digite o seu peso: ")
+    var altura = pegaNumero("Digite a sua altura: ")
+    var dataNascimento = prompt("Qual a data de nascimento: ")
+    // ["15", "11", "1980"]
+    var diaMesAno = dataNascimento.split("-")
+
+    var dia = diaMesAno[0];
+    var mes = diaMesAno[1];
+    var ano = diaMesAno[2];
+
+    var idade = calculaIdade(dia, mes, ano);
+
+    document.write("Nome = " + nome + "<br>");
+    document.write("Idade = " + idade + "<br>");
+    document.write("Peso =  " + peso + " Kg<br>");
+    document.write("Altura =  " + altura + " <br>");
+    document.write("Data Nascimento =  " + dataNascimento + " <br>");
+
+</>
+==========================================================
+
+libIdade.js
+
+function numeroComDoisDigitos(numero){
+    return numero.toString().padStart(2,0)
+}
+
+function numeroComQuatroDigitos(numero){
+    return numero.toString().padStart(4,0)
+}
+
+function pegaAnoAtual(){
+    return new Date().getFullYear().toString()
+}
+
+function pegaMesAtual(){
+    return numeroComDoisDigitos(new Date().getMonth()+1)
+}
+
+function pegaDiaAtual(){
+    return numeroComDoisDigitos(new Date().getDate())
+}
+
+function calculaIdade(dia, mes, ano){
+    var anoAtual = pegaAnoAtual()
+    var mesAtual = pegaMesAtual()
+    var diaAtual = pegaDiaAtual()
+
+    ano = numeroComQuatroDigitos(ano)
+    mes = numeroComDoisDigitos(mes)
+    dia = numeroComDoisDigitos(dia)
+    
+    var dataAtualConcatenada = "" + anoAtual + mesAtual + diaAtual
+    var anoNascimentoConcatenado = "" + ano + mes + dia
+
+    var idadeQuebrada = (dataAtualConcatenada - anoNascimentoConcatenado) / 10000
+
+    return parseInt(idadeQuebrada)
+}
+
+EXERCICIO 6.3: CALCULANDO A IDADE DO ALUNO DA ACADEMIA => PAG.69
+
+====================================================================================
+
+<>
+
+        var nome = prompt("Digite seu Nome: ");
+        var idade = pegaNumero("Digite sua idade: ");
+        var peso = pegaNumero("Digite seu Peso: ");
+        var altura = pegaNumero("Digite sua Altura: ");
+        var datadeNascimento = prompt("Digite sua Data de Nascimento: ")
+
+        var diaMesAno = datadeNascimento.split("/")
+
+        var dia = parseInt (datadeNascimento[0]);
+        var mes = parseInt (datadeNascimento[1]);
+        var ano = parseInt (datadeNascimento[2]);
+
+        document.write("Nome :" + nome + "<br>");
+        document.write("Idade :" + idade + "<br>");
+        document.write("Peso :" + peso +"<br>");
+        document.write("Altura :" + altura + "<br>");
+        document.write("Data de Nascimento :" + datadeNascimento + "<br>");
+
+
+
+
+
+
+
+    </>
+
+
+======================================================================
+
+<h1>Cadastramento Academia Caelum WD-01</h1>
+< src="js/libFormataNumero.js"></>
+< src="js/libIdade.js"></>
+< src="js/mostra.js"></>
+
+Data de Nascimento:<br>
+<input type="text" id="campoNascimentoFormulario"/>
+<input type="button"  value="Calcular" onclick="calcularIdade()"/>
+<>
+
+function calcularIdade() {
+   
+    var dataNascimento = campoNascimentoFormulario.value; //<input type="text" id="campoNascimentoFormulario"/>
+    console.log(dataNascimento);
+    var diaMesAno = dataNascimento.split("-")
+
+    var dia = diaMesAno[0];
+    var mes = diaMesAno[1];
+    var ano = diaMesAno[2];
+
+    var idade = calculaIdade(dia, mes, ano);
+
+   mostra("Minha idade" + idade);
+}
+
+</>
+
+=================================================================
+
+6.5 exercicio  - usando interface grafica -> pag. 74
+
+
+
+
+
+
+
+Fabio Gomes
+fabio.gomes@caelum.com.br
+
+<>
+ 
+ function pulaLinha() {
+    document.write("<hr>")
+ }
+
+ var mensagem
+
+ // v1 significa um texto para exibir na tela
+ function exibirNaTela(texto) {
+     document.write(texto)
+     pulaLinha()
+ }
+    var idade =  40;
+    var peso = 93;
+    var altura = 1.76
+    
+    mensagem = "Minha idade " + idade;
+    exibirNaTela("idade");
+    //document.write("Minha idade " + idade );
+    //pulaLinha()
+
+    mensagem = "Peso =  " + peso + " Kg";
+    exibirNaTela(mensagem)
+    //document.write("Peso =  " + peso + " Kg");
+
+
+    mensagem = "Altura =  " + altura + "";
+    exibirNaTela(mensagem)
+    //document.write("Altura =  " + altura + "");
+    //pulaLinha()
+ 
+ </>
+=========================================================================
+
+6.1 - EXERCICIO > fichaAcademia.html => pag 65
+
+FICHA DE ACADEMIA CAELUM
+
+INFORMACOES A BUSCAR
+
+- NOME
+- IDADE
+- PESO
+- ALTURA
+- DATA DE NASCIMENTO
+
+
+PROMPT
+
+
+
+
+
+
+=========================================================================
+
+
+<meta charset="utf-8">
+<h1>Ficha de Academia Caelum</h1>
+<>
+    var mensagem
+    function pegaDados(mensagem) {
+        return prompt(mensagem).replace(",", ".")
+    }
+    mensagem = "Qual seu nome?"
+    var nome = pegaDados(mensagem)
+    mensagem = "Qual o peso?"
+    var peso = pegaDados(mensagem)
+    mensagem = "Qual altura?"
+    var altura = pegaDados(mensagem)
+    mensagem = "Qual data de nascimento?"
+    var datanascimento = pegaDados(mensagem)
+    document.write(`
+            Nome: ${nome}
+            <br>
+            Peso: ${peso}
+            <br>
+            Altura: ${altura}
+            <br>
+            Data de Nascimento: ${datanascimento}
+            `)
+</>
+
+=======================================================
+<h1>Cadastramento Academia Caelum WD-01</h1>
+< src="js/libFormataNumero.js"></>
+< src="js/libIdade.js"></>
+<>
+
+    var nome = prompt("Digite o seu nome: ")
+    //var idade = pegaNumero("Digite a sua idade: ")
+    var peso = pegaNumero("Digite o seu peso: ")
+    var altura = pegaNumero("Digite a sua altura: ")
+    var dataNascimento = prompt("Qual a data de nascimento: ")
+    // ["15", "11", "1980"]
+    var diaMesAno = dataNascimento.split("-")
+
+    var dia = diaMesAno[0];
+    var mes = diaMesAno[1];
+    var ano = diaMesAno[2];
+
+    var idade = calculaIdade(dia, mes, ano);
+
+    document.write("Nome = " + nome + "<br>");
+    document.write("Idade = " + idade + "<br>");
+    document.write("Peso =  " + peso + " Kg<br>");
+    document.write("Altura =  " + altura + " <br>");
+    document.write("Data Nascimento =  " + dataNascimento + " <br>");
+
+</>
+==========================================================
+
+libIdade.js
+
+function numeroComDoisDigitos(numero){
+    return numero.toString().padStart(2,0)
+}
+
+function numeroComQuatroDigitos(numero){
+    return numero.toString().padStart(4,0)
+}
+
+function pegaAnoAtual(){
+    return new Date().getFullYear().toString()
+}
+
+function pegaMesAtual(){
+    return numeroComDoisDigitos(new Date().getMonth()+1)
+}
+
+function pegaDiaAtual(){
+    return numeroComDoisDigitos(new Date().getDate())
+}
+
+function calculaIdade(dia, mes, ano){
+    var anoAtual = pegaAnoAtual()
+    var mesAtual = pegaMesAtual()
+    var diaAtual = pegaDiaAtual()
+
+    ano = numeroComQuatroDigitos(ano)
+    mes = numeroComDoisDigitos(mes)
+    dia = numeroComDoisDigitos(dia)
+    
+    var dataAtualConcatenada = "" + anoAtual + mesAtual + diaAtual
+    var anoNascimentoConcatenado = "" + ano + mes + dia
+
+    var idadeQuebrada = (dataAtualConcatenada - anoNascimentoConcatenado) / 10000
+
+    return parseInt(idadeQuebrada)
+}
+
+EXERCICIO 6.3: CALCULANDO A IDADE DO ALUNO DA ACADEMIA => PAG.69
+
+====================================================================================
+
+<>
+
+        var nome = prompt("Digite seu Nome: ");
+        var idade = pegaNumero("Digite sua idade: ");
+        var peso = pegaNumero("Digite seu Peso: ");
+        var altura = pegaNumero("Digite sua Altura: ");
+        var datadeNascimento = prompt("Digite sua Data de Nascimento: ")
+
+        var diaMesAno = datadeNascimento.split("/")
+
+        var dia = parseInt (datadeNascimento[0]);
+        var mes = parseInt (datadeNascimento[1]);
+        var ano = parseInt (datadeNascimento[2]);
+
+        document.write("Nome :" + nome + "<br>");
+        document.write("Idade :" + idade + "<br>");
+        document.write("Peso :" + peso +"<br>");
+        document.write("Altura :" + altura + "<br>");
+        document.write("Data de Nascimento :" + datadeNascimento + "<br>");
+
+
+
+
+
+
+
+    </>
+
+
+======================================================================
+
+<h1>Cadastramento Academia Caelum WD-01</h1>
+< src="js/libFormataNumero.js"></>
+< src="js/libIdade.js"></>
+< src="js/mostra.js"></>
+
+Data de Nascimento:<br>
+<input type="text" id="campoNascimentoFormulario"/>
+<input type="button"  value="Calcular" onclick="calcularIdade()"/>
+<>
+
+function calcularIdade() {
+   
+    var dataNascimento = campoNascimentoFormulario.value; //<input type="text" id="campoNascimentoFormulario"/>
+    console.log(dataNascimento);
+    var diaMesAno = dataNascimento.split("-")
+
+    var dia = diaMesAno[0];
+    var mes = diaMesAno[1];
+    var ano = diaMesAno[2];
+
+    var idade = calculaIdade(dia, mes, ano);
+
+   mostra("Minha idade" + idade);
+}
+
+</>
+
+=================================================================
+
+6.5 exercicio  - usando interface grafica -> pag. 74
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

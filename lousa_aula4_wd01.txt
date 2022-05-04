@@ -1,0 +1,96 @@
+          .:: Uber vs Carro ::. <h2>
+
+::UBER <h4>
+
+Total: R$ 42,68
+
+::CARRO <h4>
+
+Gasolina: R$ 8,34
+Estacionamento: R$ 15,00
+Total: R$ 23,34
+
+===============================================
+
+<meta charset="utf-8">
+<h1><strong>Uber vs Carro</strong></h1>
+
+<h4>UBER</h4> 
+
+Total: R$ 42,68
+
+<h4>CARRO</h4> 
+
+Gasolina: R$ 8,34 <br>
+Estacionamento: R$ 15,00 <br>
+Total: R$ 23,34
+=============================================
+
+<meta charset="utf-8">
+
+<>
+
+document.write("<h1><strong>Uber vs Carro</strong></h1>");
+
+document.write("<h4>UBER</h4>"); 
+
+document.write("Total: R$ 42,68");
+
+document.write("<h4>CARRO</h4>"); 
+
+//var precoGasolinaTextoForcado = "3.14"
+var precoGasolinaTexto = prompt("Digite o seu gasto com a gasolina?");
+
+//var precoGasolinaConvertidoForcado = 3.142324343
+var precoGasolinaNumeroDecimal = parseFloat(precoGasolinaTexto);
+//var precoGasolinaNumeroDecimalDuasCasas = 3.142324343
+var precoGasolinaNumeroDecimalDuasCasas = precoGasolinaNumeroDecimal.toFixed(2);
+
+//var precoGasolinaConvertido = 3.14
+//precoGasolinaConvertido = 3,14
+var precoGasolinaConvertido = precoGasolinaNumeroDecimalDuasCasas.replace("." , ",");
+
+//forma rapida de capturar / converter string para numero / fixar casas decimais / trocar . por ,
+var totalGasolina = parseFloat(prompt("Digite o seu gasto com a gasolina?")).toFixed(2).replace(".", ",");
+
+document.write(precoGasolinaConvertido)
+var precoGasolinaFinal = 
+document.write("Gasolina: R$ " + precoGasolina + " <br>");
+document.write("Estacionamento: R$ 15,00 <br>");
+document.write("Total: R$ 23,34");
+</>
+
+======================================================================
+
+Formula:
+
+VELOCIDADE_MEDIA = prompt(?????)
+
+tarifaBasica = 2
+precoPorKM = 1.4
+precoPorMinuto = 0.26
+
+TEMPO_EM_HORAS = DISTANCIA / VELOCIDADE_MEDIA
+tempoEmMinutos = tempo_em_horas * 60
+
+totalUber = 2 + distancia * 1.4 + tempoEmMinutos * 0.26
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

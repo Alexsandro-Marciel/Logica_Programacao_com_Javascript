@@ -1,0 +1,116 @@
+Fabio Gomes
+fabio.gomes@caelum.com.br
+
+5.3 Exercicio = criando a funcao pegaNumero pag 52
+5.4 Desafio = FUNCAO PEGANUMERO NO CALCULO DO IMC - pag 55
+
+=========================================================
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Uber vs Carro</title>
+</head>
+
+<h1>Uber vs Carro</h1>
+
+<h2>UBER</h2>
+
+<>
+    alert("Calculando custo para Uber")
+    var velocidade_media = parseFloat(prompt("Qual a velocidade média do Uber?"))
+    var distancia = parseFloat(prompt("Qual a distância percorrida pelo Uber?"))
+    var tempoemhoras = distancia / velocidade_media
+    var tempoEmMinutos = tempoemhoras * 60    
+    var totalUber = 2 + distancia * 1.4 + tempoEmMinutos * 0.26
+
+    document.write `Total: R$ ${totalUber.toFixed(2).replace(".", ",")}
+
+===========================AQUI ESTA O PROBLEMA -===============================
+    <br>
+        
+    <h2>CARRO</h2>`
+====================================================================================
+
+document.write("<br><h2>CARRO</h2>")
+
+
+    alert("Calculando custo do seu carro")
+
+    var distancia = parseFloat(prompt("Qual a distância que será percorrida?"))
+    var autonomia = parseFloat(prompt("Quantos KM seu carro faz por litro?"))
+    var precolitrogas = parseFloat(prompt("Qual o preço do litro da gasolina?"))
+    var totalgasolina = (distancia / autonomia) * precolitrogas
+    var totalestacionamento = parseFloat(prompt("Digite quanto gastará com estacionamento"))
+    var totalcarro = totalgasolina + totalestacionamento
+    document.write(`Gasolina: R$ ${totalgasolina.toFixed(2).replace(".", ",")}
+    <br>
+    Estacionamento: R$ ${totalestacionamento.toFixed(2).replace(".", ",")}
+    <br>
+    Total: R$ ${totalcarro.toFixed(2).replace(".", ",")}`)
+</>
+
+</html>
+mensagem	=	"Qual	a	distância	que	será	percorrida?"
+var	distancia	=	pegaNumero()
+
+---------------- VERSAO INSTRUTOR PEGANUMERO ------------------------------------------------------------------
+
+var mensagem;
+
+    function pegaNumero() {
+        var numeroEmTexto = prompt(mensagem); // return ""
+        var numeroFormatado =numeroEmTexto.replace(",",".");
+        var numero = parseFloat(numeroFormatado);
+        return numero
+        //return parseFloat(prompt(mensagem).replace(",","."));
+    }
+
+   /*var idade = parseFloat(prompt("Digite a sua idade"));
+   var peso = parseFloat(prompt("Digite o seu peso"));
+   var altura = parseFloat(prompt("Digite a sua altura"));*/
+    mensagem = "Digite a sua idade: ";
+    var idade = pegaNumero()
+
+    mensagem = "Digite o seu peso: "
+    var peso =  pegaNumero()
+
+    mensagem = "Digite a sua altura: "
+    var altura =  pegaNumero()
+
+   document.write("Minha idade " + idade + "<br>");
+   document.write("Peso =  " + peso + " Kg<br>");
+   document.write("Altura =  " + altura + " <br>");
+----------------------------------------------------------------------------------------------------------------- 
+var mensagem
+function pegaNumero() {
+return parseFloat(prompt(mensagem).replace(",", ".")).toFixed(2)
+}
+
+==================================================================
+libRelogio.js
+
+function formataRelogio() {
+    var tempoEmHorasFloat = tempo_/60
+    var horas = parseInt(tempoEmHorasFloat)
+    var minutos = parseInt((tempoEmHorasFloat - horas) * 60)
+    return horas.toString().padStart(2,0) + ":" + minutos.toString().padStart(2,0)
+}
+
+EXERCICIO 5.9 : USANDO PARAMETROS NAS FUNCOES - PAG. 61
+
+
+
+
+
+
+
+
+
+
+
+
+
+

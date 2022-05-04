@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Calcule o valor de sua Conta</h1>
+<hr>
+<br>
+
+<style>
+    body {
+            background-color: rgb(141, 209, 14);
+            text-align: justify;
+            color: rgb(39, 38, 38);
+            font-size: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+         }
+    h1 {    
+            color: rgb(27, 55, 146);
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+            background-color: rgb(173, 230, 15);
+            text-align: center;
+        }
+    
+    
+    
+    </style>
+    
+
+    <script>
+        // Vairaveis do Exercicio Taxa: 1.1
+        var valordaConta = prompt ("Infome o Valor da Conta");
+        var taxadeServiço = prompt ("Informe a Taxa de Seviço");
+        var totaldaConta = parseInt (valordaConta * 1.1);
+        
+        document.write("<hr><hr>");
+        document.write(".:: Exercício 1 ::. ")
+        document.write("<br><br>")
+        document.write("Sistema: Restaurante Vai La <br> Autor: Alexsandro <br> Versão: 3.0<br>")
+        document.write("Valor da Conta: R$" + valordaConta);
+        document.write("<br>")
+        document.write("Taxa de Seviço: " + taxadeServiço + "%");
+        document.write("<br>")
+        document.write("Valor Total: R$" + totaldaConta);
+        document.write("<hr>")
+        document.write("<hr>")
+        document.write("Formula : Valor Total = Valor da Conta * Taxa de Serviço")
+        document.write("<br>")
+        document.write("<hr><hr>")
+            
+        </script>
+        
+        
+
+
+</body>
+</html>

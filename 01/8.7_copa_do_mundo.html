@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.7_Copa do Mundo</title>
+    <script src="js/pegaPaisCopa.js"></script>
+    <script src="js/mostra.js"></script>
+</head>
+
+<body>
+
+    <h1>Copa do Mundo</h1>
+    <hr>
+    
+
+    <style>
+        h1 {
+            color: rgb(0, 0, 0);
+            font-family: arial;
+            text-align: center;
+        }
+
+        body {
+
+            color: rgb(77, 78, 69);
+            background-color: rgba(241, 245, 6, 0.986);
+            font-family: arial;
+            font-size: 24px;
+        }
+
+        hr {
+
+            color: rgb(7, 7, 7);
+            border-radius: 10px;
+            border-color: rgb(0, 0, 0);
+
+        }
+    </style>
+
+
+
+
+    <script>
+
+        var anoInicial = 1930
+        var anoLimite = 2018
+
+        while (anoInicial <= anoLimite) {
+            var paisDaCopa = pegaPaisCopa(anoInicial)
+
+            mostra(`${anoInicial} - ${paisDaCopa}`)
+            anoInicial = anoInicial + 4;
+        }
+
+
+        
+
+
+    </script>
+</body>
+
+</html>

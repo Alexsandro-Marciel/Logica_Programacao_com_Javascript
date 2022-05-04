@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.8_JOGO: ADIVINHE O NÚMERO!</title>
+    <script src="js/lib_numeroFormatado.js"></script>
+    <script src="js/mostra.js"></script>
+</head>
+
+<body>
+
+    <h1>JOGO: ADIVINHE O NÚMERO!</h1>
+    <hr>
+    <button onclick="jogar()">Jogar</button>
+
+    <style>
+        h1 {
+            color: rgb(210, 245, 16);
+            font-family: arial;
+            text-align: center;
+        }
+
+        body {
+
+            color: rgb(211, 245, 17);
+            background-color: rgb(180, 21, 180);
+            font-family: arial;
+            font-size: 24px;
+        }
+
+        hr {
+
+            color: rgb(211, 245, 17);
+            border-radius: 10px;
+            border-color: rgb(211, 245, 17);
+
+        }
+    </style>
+
+
+
+
+    <script>
+
+
+        var numeroJogo = 0
+        function jogar() {
+
+            numeroJogo = numeroJogo + 1;
+
+            var numeroSorteado = parseInt(Math.random() * 10);
+            var chute = pegaNumero("Adivinhe o Número")
+
+            if (chute < 0 || chute > 10) {
+
+                chute = pegaNumero("Número inválido. Ele está entre 0 e 10. Tente de novo!")
+            }
+
+            if (chute == numeroSorteado) {
+
+                mostra(`Jogo ${numeroJogo}: Você Acertou! O Número é: ${numeroSorteado}`)
+
+            }
+            else {
+                mostra(`Jogo ${numeroJogo}: Você Errou! O Número é: ${numeroSorteado}`)
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.3 Exercicio = criando a funcao pegaNumero pag 52</title>
+    <script src="js/lib_numeroFormatado.js"></script>
+    <script src="js/libRelogio.js"></script>
+</head>
+<body>
+
+    <style>
+
+        h2{
+            color: blue;
+            font-family: arial;
+            font-size: 24px;
+        }
+
+        body{
+            background-color: burlywood;
+            font-size: 14px;
+            font-family: arial;
+            text-align: center;
+
+
+        }
+
+
+
+    </style>
+    <h2>Uber</h2>
+    <hr>
+    <script>
+/*
+var mensagem
+function pegaNumero() {
+return parseFloat(prompt(mensagem).replace(",", "."))
+}
+*/
+
+
+        
+        var distancia = pegaNumero("Qual a distância que será percorrida?")
+        
+        var velocidadeMedia = pegaNumero("Qual a velocidade média do carro?")
+        var tempoEmHoras = distancia / velocidadeMedia
+        var tempoEmMinutos = tempoEmHoras * 60
+        var totalUber = 2 + distancia * 1.4 + tempoEmMinutos * 0.26
+       /* document.write(`Total: R$ ${totalUber.toFixed(2).replace(".", ",")}`)*/
+       tempo = tempoEmMinutos
+       var tempoFormatado = formataRelogio()
+       document.write(`Tempo: ${tempoFormatado}<br> Total: R$ ${totalUber.toFixed(2).replace(".", ",")}`)
+
+        </script>
+
+
+        <h2>Carro</h2>
+        <hr>
+        <script>
+        
+        var autonomia = pegaNumero("Quantos km seu carro faz por litro?" )
+        
+        var precoLitroGasolina = pegaNumero("Qual o preço do litro da gasolina?")
+        
+        var totalEstacionamento = pegaNumero("Digite o quanto gastará com estacionamento")
+        var totalGasolina = (distancia / autonomia) * precoLitroGasolina
+        var totalCarro = totalGasolina + totalEstacionamento
+        document.write(`Gasolina: R$ ${totalGasolina.toFixed(2).replace(".", ",")}
+        <br>Estacionamento: R$ ${totalEstacionamento.toFixed(2).replace(".", ",")}
+        <br>Total: R$ ${totalCarro.toFixed(2).replace(".", ",")}`)
+        </script>
+</body>
+</html>

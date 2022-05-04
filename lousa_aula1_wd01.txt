@@ -1,0 +1,43 @@
+2.4 Exercicio: Introducao
+
+<img src="imagem/cael.png" />
+
+ servir nas xícaras
+ pegar a caneca
+ completar com água
+ ferver água
+ adicionar café em pó
+ coar
+
+
+Esquentar a água (desligar antes de ferver)
+ Colocar a água aos poucos dentro do filtro
+ Colocar o pó do café em um filtro de papel (para café forte coloque uma colher de café para cada copo de 200 ml)
+ Adoçar a gosto e tomar quente
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sequencia
+
+instrucoes
+
+procedimen
+
+                   
+passo 
+
+
+palavra-chave
+algoritimo - Sequencia ordenada, finita e nao ambigua
+
+
+regras
+treinamento
+
+
+
+
+
+detalhes
+
+informações
+	

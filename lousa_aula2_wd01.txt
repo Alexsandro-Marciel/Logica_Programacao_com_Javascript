@@ -1,0 +1,66 @@
+Fabio Gomes
+fabio.gomes@caelum.com.br
+
+Tira-gosto [Exercícios extras -> dontpad.com/lousa-fsg]
+Atenção!!! -> Somente código html!!!
+
+Exercicio 3.3 -> CALCULANDO A MEDIA DE IDADES - PAGINA 23
+=========================================================================
+
+ var ano  = 2031;
+    var anoNascimentoPaula  =  "2020";
+
+
+    document.write("Eu tenho:" + (ano - 1980));
+    document.write("<hr>")
+    document.write("Paulo tem:" + (ano - 1990));
+  
+    document.write("<hr>")
+    document.write("Guilherm tem:" + (ano - 1992));
+
+===================================================================
+Exercicio 3.7 -> CALCULANDO A MEDIA DE IDADES - PAGINA 27
+
+<script>
+
+   var idadeFabio = 40;
+   var idadePaulo = 29;
+   var idadeGuilherme = 27;
+
+   var somaIdade = idadeFabio + idadePaulo + idadeGuilherme;
+   var quantidadeDeIdades = 3;
+    var media = somaIdade/quantidadeDeIdades
+
+    document.write("Eu tenho:" + idadeFabio);
+    document.write("<hr>")
+    document.write("Paulo tem:" + idadePaulo);
+    document.write("<hr>")
+    document.write("Total de Idades:" +somaIdade + "<br>");
+    document.write("Media:" +media);
+
+</script>
+===================================================================
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio1_v1</title>
+</head>
+<body>
+    <hr>
+    <hr>
+    <p>.::  Exercício 1 ::.<br><br> Sistema: Restaurante Vai La <br>
+        Autor: Fulano <br>
+        Versão: 1.0</p><br>
+        <hr>
+    <p>Valor da Conta: R$ 100 <br>
+        Taxa de Serviço: 10% <br>
+        Valor Total: R$ 110</p>
+        <hr>
+        <p>Formula : Valor Total = Valor da Conta * Taxa de Serviço
+        </p>
+        <hr><hr>  
+</body>
+</html>

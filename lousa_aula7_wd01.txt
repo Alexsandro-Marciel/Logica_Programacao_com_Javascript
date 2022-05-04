@@ -1,0 +1,217 @@
+Fabio Gomes
+fabio.gomes@caelum.com.br
+
+https://apostilas-caelum.s3.amazonaws.com/caelum-arquivos-curso-logica.zip
+
+===============================================================================
+
+<h1>Cadastramento Academia Caelum WD-01</h1>
+< src="js/libFormataNumero.js"></>
+< src="js/libIdade.js"></>
+< src="js/mostra.js"></>
+
+Data de Nascimento:<br>
+<input type="text" id="campoNascimentoFormulario"/>
+<!-- <input type="button"  value="Calcular" onclick="calcularIdade()"/> -->
+<br>
+<br>
+Tem problemas cardiacos? <input type="checkbox" id="campoCardiacoFormulario" checked />
+ 
+<br>
+<br>
+<button onclick="calcularIdade()">Calcular</button>
+<>
+
+function calcularIdade() {
+    var temProblemasCardiacos = campoCardiacoFormulario.checked; // <input type="checkbox" id="campoCardiacoFormulario"/>
+    console.log(temProblemasCardiacos)
+
+    var dataNascimento = campoNascimentoFormulario.value; 
+    // var dataNascimento = document.getElementById("campoNascimentoFormulario") => <input type="text" id="campoNascimentoFormulario"/>
+    // campoNascimentoFormulario =  <input type="text" id="campoNascimentoFormulario"/>
+    //  campoNascimentoFormulario.value = 15/11/1980
+
+    console.log(dataNascimento);
+    var diaMesAno = dataNascimento.split("-")
+
+    var dia = diaMesAno[0];
+    var mes = diaMesAno[1];
+    var ano = diaMesAno[2];
+
+    var idade = calculaIdade(dia, mes, ano);
+
+    var mensagemDeAcompanhamento
+
+    // var temProblemasCardiacos = false 
+    if (temProblemasCardiacos) {
+        mensagemDeAcompanhamento = "Necessita de acompanhamento!";
+    }
+
+    if (!temProblemasCardiacos) {
+        mensagemDeAcompanhamento = "<strong>NÂO</strong> necessita de acompanhamento!";
+    }
+
+
+   mostra("Minha idade" + idade + "<br>" + mensagemDeAcompanhamento);
+}
+</>
+======================================================================================================
+
+7.2 EXERCICIO - USANDO IF PARA PESSOAS COM PROBLEMAS CADIACOS
+
+7.4 EXERCICIO - JUNTANDO CONDICOES COM OPERADORES LOGICOS => PAG 85
+
+======================================================================================================
+
+<h1>Cadastramento Academia Caelum WD-01</h1>
+< src="js/libFormataNumero.js"></>
+< src="js/libIdade.js"></>
+< src="js/mostra.js"></>
+
+Data de Nascimento:<br>
+<input type="text" id="campoNascimentoFormulario" />
+<!-- <input type="button"  value="Calcular" onclick="calcularIdade()"/> -->
+<br>
+<br>
+Tem problemas cardiacos? <input type="checkbox" id="campoCardiacoFormulario" checked />
+
+<br>
+<br>
+<button onclick="calcularIdade()">Calcular</button>
+<>
+
+    function calcularIdade() {
+        var temProblemasCardiacos = campoCardiacoFormulario.checked; // <input type="checkbox" id="campoCardiacoFormulario"/>
+        console.log(temProblemasCardiacos)
+
+        var dataNascimento = campoNascimentoFormulario.value;
+        // var dataNascimento = document.getElementById("campoNascimentoFormulario") => <input type="text" id="campoNascimentoFormulario"/>
+        // campoNascimentoFormulario =  <input type="text" id="campoNascimentoFormulario"/>
+        //  campoNascimentoFormulario.value = 15/11/1980
+
+        console.log(dataNascimento);
+        var diaMesAno = dataNascimento.split("-")
+
+        var dia = diaMesAno[0];
+        var mes = diaMesAno[1];
+        var ano = diaMesAno[2];
+
+        var idade = calculaIdade(dia, mes, ano);
+
+        // Operadores condicionais, ou seja, geram verdadeiro ou falso
+        // < - menor
+        // > - maior
+        // == igualdade
+        // != diferente
+        // <= menor ou igual
+        // >= maior ou igual
+        var ehCrianca = idade < 16; // idade = 15 => 18 < 16 => false
+
+        var mensagemDeAcompanhamento
+
+        // var temProblemasCardiacos = false 
+
+        /*
+        if (temProblemasCardiacos) {
+            mensagemDeAcompanhamento = "Necessita de acompanhamento!";
+        }
+
+        if (ehCrianca) {
+            mensagemDeAcompanhamento = "Necessita de acompanhamento!";
+        }
+
+        if (!temProblemasCardiacos) {
+            if (!ehCrianca) {
+                mensagemDeAcompanhamento = "<strong>NÃO</strong> necessita de acompanhamento!";
+            }
+        }
+        */
+        
+        if (temProblemasCardiacos || ehCrianca) {
+            mensagemDeAcompanhamento = "Necessita de acompanhamento!";
+        }
+      
+        if (!temProblemasCardiacos && !ehCrianca) {
+            mensagemDeAcompanhamento = "<strong>NÃO</strong> necessita de acompanhamento!";
+        }
+        
+
+
+        mostra("<hr>Minha idade: " + idade + " <br>" + mensagemDeAcompanhamento);
+    }
+</>
+
+===============================================================================
+
+7.6 EXERCICIO : CONTADOR DO NUMERO DE FICHAS
+
+7.7 ADICIONANDO TITULO NO COMECO DA LISTA DE FICHAS
+
+7.8 JOGO DE ADIVINHAR UM NUMERO
+
+==============================================================================
+
+<button onclick="contar()">Contar</button>
+<script>
+
+
+var contador = 0
+
+function contar(){
+    
+    contador = contador + 1;
+    if(contador == 1) {
+        alert("Vamos iniciar a contagem...")
+    }
+    console.log(contador)
+}
+    
+</script>
+==============================================================================
+
+7.10 FAZENDO OS CASOS CONTRARIOS COM O ELSE
+
+<h1>Jogo</h1>
+
+<button onclick="jogar()">Jogar</button>
+
+<script src="js/mostra.js"></script>
+
+<script>
+
+
+    var numeroJogo = 0
+
+    function jogar() {
+
+        numeroJogo = numeroJogo + 1;
+
+        var numeroSorteado = parseInt(Math.random() * 10) 
+        var chute = prompt("Favor adivinhar o numero:")
+
+        if(chute == numeroSorteado) {
+            mostra(`Jogo ${numeroJogo}: Acertou! O numero era  ${numeroSorteado}`)
+        } else {
+            mostra(`Jogo ${numeroJogo}: Errou! O numero era  ${numeroSorteado}`)
+ 
+        }           
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

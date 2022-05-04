@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.6_EXERCICIO_CONTADOR DO NUMERO DE FICHAS</title>
+    <script src="JS/libBrasil.js"></script>
+    <script src="JS/mostra.js"></script>
+    <script src="JS/libIdade.js"></script>
+</head>
+
+<body>
+
+    <h1>Ficha Academia Caelum</h1>
+    <hr>
+
+    Nome
+    <br>
+    <input type="text" id="campoNome">
+    <br><br>
+
+    Peso
+    <br>
+    <input type="text" id="campoPeso">
+    <br><br>
+
+    Altura
+    <br>
+    <input type="text" id="campoAltura">
+    <br><br>
+
+    Data de Nascimento
+    <br>
+    <input type="text" id="campoDataNascimento">
+    <br><br>
+
+    Tem problemas cardíacos?
+    <input type="checkbox" id="campoProblemasCardiacos">
+    <br>
+
+
+
+    <button onclick="criaFicha()">Enviar</button>
+
+
+    <style>
+        h1 {
+            color: rgb(253, 252, 251);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+
+        }
+
+        body {
+
+            background-color: rgb(117, 165, 4);
+            text-align: center;
+            font-size: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+
+    <script>
+
+
+
+
+        var numeroFicha = 0
+        function criaFicha() {
+
+            var nome = campoNome.value
+            var peso = parseFloatBrasil(campoPeso.value)
+            var altura = parseFloatBrasil(campoAltura.value)
+            var dataNascimento = campoDataNascimento.value
+
+            var diaMesAnoNascimento = dataNascimento.split("/")
+
+            var diaNascimento = diaMesAnoNascimento[0]
+            var mesNascimento = diaMesAnoNascimento[1]
+            var anoNascimento = diaMesAnoNascimento[2]
+            var idade = calculaIdade(diaNascimento, mesNascimento, anoNascimento)
+
+            //Lógica Condicional - Verdadeiro ou Falso
+
+            var temProblemasCardiacos = campoProblemasCardiacos.checked
+            var fraseAcompanhamentoMedico
+            var ehCrianca = idade < 16;
+            numeroFicha = numeroFicha + 1
+
+
+            if (temProblemasCardiacos || ehCrianca) {
+
+                fraseAcompanhamentoMedico = "Cliente Necessita de acompanhamento Médico"
+
+            }
+
+            if (!temProblemasCardiacos && !ehCrianca) {
+
+                fraseAcompanhamentoMedico = "Cliente <strong>NÃO</strong> Necessita de acompanhamento Médico"
+
+            }
+
+            mostra(`<hr>Ficha Nº ${numeroFicha}<hr>Nome: ${nome}
+<br>Peso: ${formataFloatBrasil(peso)} kg
+<br>Altura: ${formataFloatBrasil(altura)} m
+<br>Data de Nascimento: ${dataNascimento}
+<br>Idade: ${idade} anos <br> ${fraseAcompanhamentoMedico}`)
+        }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

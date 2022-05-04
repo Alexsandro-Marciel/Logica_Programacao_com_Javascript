@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Academia Caelum</title>
+    <script src="js/lib_numeroFormatado.js"></script>
+    <script src="js/libIdade.js"></script>
+</head>
+<body>
+
+    <h1>Ficha Academia Caelum</h1>
+
+    <script>
+
+        var nome = prompt("Digite seu Nome: ");
+        var idade = pegaNumero("Digite sua idade: ");
+        var peso = pegaNumero("Digite seu Peso: ");
+        var altura = pegaNumero("Digite sua Altura: ");
+        var datadeNascimento = prompt("Digite sua Data de Nascimento: ")
+
+        var diaMesAno = datadeNascimento.split("/")
+
+        var dia = parseInt (datadeNascimento[0]);
+        var mes = parseInt (datadeNascimento[1]);
+        var ano = parseInt (datadeNascimento[2]);
+
+        document.write("Nome: " + nome + "<br>");
+        document.write("Idade: " + idade + "<br>");
+        document.write("Peso: " + peso +"<br>");
+        document.write("Altura: " + altura + "<br>");
+        document.write("Data de Nascimento: " + datadeNascimento + "<br>");
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

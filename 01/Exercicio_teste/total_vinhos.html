@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total de Vinhos</title>
+    <script src="lib_pegaNumero.js"></script>
+    <script src="mostra.js"></script>
+    <script src="libBrasil.js"></script>
+</head>
+
+<body>
+
+    <h1>Total de Vinhos Restante</h1>
+    <hr>
+    <div class="campo">
+        <h2>VINHOS</h2>
+        Vinho 2 lt (pac. Fechado):
+        <br>
+        <input type="text" id="campoVinho2ltpac" required>
+        <br><br>
+        Vinho 2 lt (unidades):
+        <br>
+        <input type="text" id="campoVinho2ltunid" required>
+        <br><br>
+        Vinho 1,9 lt (pac. Fechado):
+        <br>
+        <input type="text" id="campoVinho19ltpac" required>
+        <br><br>
+        Vinho 1,9 lt (unidades):
+        <br>
+        <input type="text" id="campoVinho19ltunid" required>
+        <br><br>
+    </div>
+
+
+
+    <button class="button" onclick="enviar()">Enviar</button>
+
+
+    <style>
+        * {
+            margin: 1;
+            padding: 1;
+        }
+
+
+
+        h1 {
+            color: rgb(17, 238, 28);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 34px;
+            text-align: center;
+        }
+        h2{
+            color: lawngreen;
+        }
+
+        hr {
+            border-color: rgb(121, 11, 247);
+            border-bottom-left-radius: 500px;
+
+        }
+
+        body {
+            background-image: url(vinho_na_taça_355477-svetik.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            text-align: left;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 12px;
+            color: rgb(247, 247, 247);
+
+
+        }
+
+        .button:hover {
+            color: crimson;
+            background-color: rgba(167, 95, 235, 0.753);
+            box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+            text-shadow: none;
+            cursor: pointer;
+
+        }
+
+        .campo,
+        .campo input[type=text] {
+            padding: 0.2em;
+            border: 1px solid #9a03fff8;
+            box-shadow: 2px 2px 2px rgba(161, 69, 223, 0.959);
+            display: inline-block;
+            text-align: center;
+
+        }
+
+        input,
+        button {
+            font-family: sans-serif;
+            font-size: 1em;
+            color: #400bdd;
+            border-radius: 5px;
+
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        /* Total de Vinhos: em 20/01/21
+           Vinho 2 lt: 03 pc + 7 und
+           Vinho 1,9 lt: 02 pc + 5 und */
+
+        var numeroEstoque = 0
+        function enviar() {
+
+            var vinho2ltpac = parseInt(campoVinho2ltpac.value);
+            var vinho2ltunid = parseInt(campoVinho2ltunid.value);
+            var vinho19ltpac = parseInt(campoVinho19ltpac.value);
+            var vinho19ltunid = parseInt(campoVinho19ltunid.value);
+            var qutPorCaixa = 6
+
+
+            var totaldePac = vinho2ltpac + vinho19ltpac;
+            var unidades = vinho2ltunid + vinho19ltunid;
+            var totaldeUnidadesGeral = ((totaldePac * qutPorCaixa) + unidades);
+            numeroEstoque = numeroEstoque + 1
+
+            if (numeroEstoque == 1) {
+                mostra("<h2>ESTOQUE DE VINHOS</h2>")
+            }
+
+
+            mostra(`Estoque Nº ${numeroEstoque}<br>Vinho de 2 lt (pac. Fechado):  ${vinho2ltpac}<br>Vinho de 2 lt (unidades): ${vinho2ltunid} <br>Vinho de 1,9 lt (pac. Fechado): ${vinho19ltpac} <br>Vinho de 1,9 lt (unidades): ${vinho19ltunid}<br>Total de Pac Fechado: ${totaldePac}<br>Total de unidades de Vinhos: ${totaldeUnidadesGeral} `)
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumento de Salário_</title>
+</head>
+<body>
+
+<h1>Calcule o Aumento de Salário do seu Funcionário</h1>
+<hr>
+<br>
+<style>
+body {
+        background-color: rgb(170, 208, 221);
+        text-align: justify;
+        color: rgb(228, 31, 70);
+        font-size: 24px;
+        font-family: Arial, Helvetica, sans-serif;
+     }
+h1 {    
+        color: rgb(27, 146, 74);
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+        background-color: rgb(173, 230, 15);
+        text-align: center;
+    }
+
+
+
+</style>
+
+    <script>
+        
+        alert("Calcule o Aumento de Salário do seu Funcionário! Clique em OK.")
+         var nome = prompt("Insira o nome do Funcionário");
+         var salarioAtual = prompt("Insira o Salário Atual");
+         var percentualdeAumento = 1.1;
+         var novoSalario = salarioAtual * percentualdeAumento;
+         
+         document.write("Funcionário: " + nome);
+         document.write("<br>Salário Atual: R$" + salarioAtual);
+         document.write("<br>Percentual de Aumento: 10%");
+         document.write("<br>Novo Salário: R$" + parseInt(novoSalario));
+         
+    </script>
+    
+</body>
+</html>
